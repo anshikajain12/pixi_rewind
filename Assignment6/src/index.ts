@@ -7,7 +7,7 @@ window.onload = ()=>{
         // resizeTo: gameDiv,
         width:innerWidth/1.02,
         height:innerHeight/1.02,
-        backgroundColor: 0x1099bb,
+        // backgroundColor: 0x1099bb,
     });
  gameDiv.appendChild(app.view);
 }
