@@ -12,11 +12,22 @@ import {
 export class Game extends Application {
   constructor(opts: any) {
     super(opts);
+    this.bg();
     this.textButton();
     this.nextButton();
     this.borderAnimatedButton();
   }
 
+  public bg(){
+    const sprite= Sprite.from("https://images.unsplash.com/15/leaf.JPG?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBuZyUyMGJhY2tncm91bmQlMjB3YWxscGFwZXIlMjBibHVlc2hhZGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+    sprite.anchor.set(0.5);
+    sprite.x = this.screen.width / 2;
+    sprite.y = this.screen.height / 2;
+    sprite.width=innerWidth;
+    sprite.height=innerHeight;
+    this.stage.addChild(sprite);
+    
+  }
   public textButton() {
      const style = new TextStyle({
       fontFamily: "Arial",
@@ -46,6 +57,7 @@ export class Game extends Application {
   }
 
   public allbutton(){
+    this.bg();
     this.nextButton();
     this.textButton();
     this.borderAnimatedButton();

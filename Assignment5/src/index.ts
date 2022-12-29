@@ -1,4 +1,4 @@
-import { Application } from 'pixi.js';
+import { Application, Sprite } from 'pixi.js';
 import { Game } from './Game';
 // import './css/main.css';
 window.onload = ()=>{
@@ -8,6 +8,7 @@ window.onload = ()=>{
         width:innerWidth/1.02,
         height:innerHeight/1.02,
         backgroundColor: 0x1099bb,
+        
     });
- gameDiv.appendChild(app.view);
+    gameDiv.appendChild(app.view);
 }
