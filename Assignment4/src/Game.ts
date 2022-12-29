@@ -1,4 +1,4 @@
-import { Application, Graphics, Sprite, Text, Container, Texture  } from "pixi.js";
+import { Application, Graphics, Sprite, Text, Container, Texture,TextStyle  } from "pixi.js";
 import * as particles from "@pixi/particle-emitter";
 import { gsap } from 'gsap';
 export class Game extends Application {
@@ -7,11 +7,8 @@ export class Game extends Application {
   arr:any[]=[400,200,70,10,"JACKPOT",150,90,30,400,60,20,500,"JACKPOT",150,90,30]
   constructor(opts: any) {
     super(opts);
-    // this.spinwheel();
     this.preload(
       [
-        // { name:"wheel",url:"assets/Wheel.png"},
-        // { name:"arrow",url:"assets/arrow.png"},
         { name: "coin1", url: "assets/coin1.png" },
         { name: "coin2", url: "assets/coin2.png" },
         { name: "coin3", url: "assets/coin3.png" },
@@ -19,7 +16,8 @@ export class Game extends Application {
         { name: "coin5", url: "assets/coin5.png" },
         { name: "coin6", url: "assets/coin6.png" },
       ],
-      this.onload.bind(this)
+      this.onload.bind(this),
+      
     );
     
   }
@@ -27,7 +25,49 @@ export class Game extends Application {
     this.loader.add(list);
     this.loader.load(cb);
   }
+
+  public textButton() {
+    const style = new TextStyle({
+     fontFamily: "Arial",
+     fontSize: 36,
+     fontStyle: "italic",
+     fontWeight: "bold",
+     fill: ["#ffffff", "#00ff99"], // gradient
+     stroke: "#4a1850",
+     strokeThickness: 5,
+     dropShadow: true,
+     dropShadowColor: "#000000",
+     dropShadowBlur: 4,
+     dropShadowDistance: 6,
+     wordWrap: true,
+     wordWrapWidth: 440,
+     lineJoin: "round",
+   });
+   const text = new Text("Please Click on screen",style);
+   text.x = this.screen.width/3;
+   text.y = this.screen.height/10;
+    this.stage.addChild(text);
+    setTimeout(() => {
+      text.visible=false
+    }, 5000);
+   
+ }
 public onload(){
+  //bg
+    const sprite = Sprite.from("./assets/game.jpg");
+    sprite.anchor.set(0.5);
+    sprite.x = this.screen.width / 2;
+    sprite.y = this.screen.height / 2;
+    sprite.width=innerWidth;
+    sprite.height=innerHeight;
+    sprite.buttonMode=true;
+    sprite.interactive=true;
+    sprite.on("pointerup",()=>{wheel.visible=true;
+    arrow.visible=true;
+  });
+    this.stage.addChild(sprite);
+    this.textButton()
+
   //wheel and arrow
   let random = 0;
     const wheel = Sprite.from("assets/Wheel.png");
@@ -41,6 +81,8 @@ public onload(){
     wheel.height=500;
     arrow.width=50;
     arrow.height=65;
+    wheel.visible=false;
+    arrow.visible=false;
     this.stage.addChild(wheel);
     this.stage.addChild(arrow); 
     wheel.interactive=true;
