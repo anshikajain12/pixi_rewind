@@ -1,87 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table {
-          font-family: arial, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
-        }
-        
-        td, th {
-          border: 1px solid #dddddd;
-          text-align: left;
-          padding: 8px;
-        }
-        
-        tr:nth-child(even) {
-          background-color: #dddddd;
-        }
-        </style>
+      * {
+       box-sizing: border-box;
+       padding: 10px;
+     }
+     body {
+       background-image: url("https://images.unsplash.com/photo-1613422795543-71e3aeac5b6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJhY2slMjBncm91bmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+       background-repeat: no-repeat;
+       background-size: cover;
+     }
+     table {
+       font-family: arial, sans-serif;
+       border-collapse:inherit;
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     a{
+       text-decoration: none;
+     }
+
+     td,
+     th {
+       border: 1px solid #624949;
+       text-align: left;
+       /* padding: 8px; */
+     }
+
+     tr:nth-child(even) {
+       background: rgb(238, 174, 202);
+       /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
+       background: radial-gradient(
+         circle,
+         rgb(167 156 161) 0%,
+         rgb(130 153 181) 100%
+       );
+       
+     }
+     tr:nth-child(odd) {
+       background: rgb(208, 174, 238);
+       background: linear-gradient(
+         90deg,
+         rgba(208, 174, 238, 1) 0%,
+         rgb(202, 165, 183) 50%,
+         rgba(148, 203, 233, 1) 100%
+       );
+     }
+   </style>
 </head>
 <body>
     <h1>hello anshika...</h1>
     <table>
-      <tr>
-        <th>SNO</th>
-        <th>Assignment Name</th>
-        <th>Assignment Link</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Assignment1</td>
-        <td><a href="./Assignment1/dist/index.html">Link</a></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Assignment2</td>
-        <td><a href="./Assignment2/dist/index.html">Link</a></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Assignment3</td>
-        <td><a href="./Assignment3/dist/index.html">Link</a></td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Assignment4</td>
-        <td><a href="./Assignment4/dist/index.html">Link</a></td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Assignment5</td>
-        <td><a href="./Assignment5/dist/index.html">Link</a></td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Assignment6</td>
-        <td><a href="./Assignment6/dist/index.html">Link</a></td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>Assignment6</td>
-        <td><a href="./Assignment6/dist/index.html">Link</a></td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>Assignment8</td>
-        <td><a href="./Assignment8/index.html">Link</a></td>
-      </tr>
-      
-      <tr>
-        <td>9</td>
-        <td>Assignment8</td>
-        <td><a href="./Assignment8/index.html">Link</a></td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>Assignment10</td>
-        <td><a href="./Assignment10/index.html">Link</a></td>
-      </tr>
-    </table>
-  </body>
+        <tr>
+          <th>SNO</th>
+          <th>Assignment Name</th>
+          <th>Assignment Link</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Assignment1</td>
+          <td><a href="./Assignment1/dist/index.html">Link</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Assignment2</td>
+          <td><a href="./Assignment2/dist/index.html">Link</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Assignment3</td>
+          <td><a href="./Assignment3/dist/index.html">Link</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Assignment4</td>
+          <td><a href="./Assignment4/dist/index.html">Link</a></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Assignment5
+          </td>
+          <td><a href="./Assignment5/dist/index.html">Link</a></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Assignment6
+            </td>
+            <td><a href="./Assignment6/dist/index.html">Link</a></td>
+          </tr>
+        <tr>
+            <td>8</td>
+            <td>Assignment8
+            </td>
+            <td><a href="./Assignment8/index.html">Link</a></td>
+          </tr>
+        <tr>
+            <td>10</td>
+            <td>Assignment10
+            </td>
+            <td><a href="./Assignment10/index.html">Link</a></td>
+          </tr>
+      </table>
+</body>
 </html>

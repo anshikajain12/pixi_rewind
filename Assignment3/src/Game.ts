@@ -1,11 +1,13 @@
-import { Application, Graphics, Sprite, Text, Container, Texture } from "pixi.js";
+import { Application, Graphics, Sprite, Text, Container, Texture, TextStyle } from "pixi.js";
 
 export class Game extends Application {
   constructor(opts: any) {
     super(opts);
-    this.nextButton();
-    this.previousBtn()
+    // this.nextButton();
+    // this.previousBtn();
+    this.middle();
   }
+
 
   public nextButton() {
     //Next button
@@ -49,6 +51,57 @@ export class Game extends Application {
     sprite.y = this.screen.height / 2;
     this.stage.addChild(sprite);
   }
+  public textButton() {
+    const style = new TextStyle({
+     fontFamily: "Arial",
+     fontSize: 36,
+     fontStyle: "italic",
+     fontWeight: "bold",
+     fill: ["#ffffff", "#00ff99"], // gradient
+     stroke: "#4a1850",
+     strokeThickness: 5,
+     dropShadow: true,
+     dropShadowColor: "#000000",
+     dropShadowBlur: 4,
+     dropShadowDistance: 6,
+     wordWrap: true,
+     wordWrapWidth: 440,
+     lineJoin: "round",
+   });
+   const text = new Text("Please Click on Buttons",style);
+   text.x = this.screen.width/3;
+   text.y = this.screen.height/8;
+   
+   const sprite = Sprite.from("./assets/game.jpg");
+   sprite.anchor.set(0.5);
+   sprite.x = this.screen.width / 2;
+   sprite.y = this.screen.height / 2;
+   sprite.buttonMode=true;
+   sprite.interactive=true;
+   sprite.on("pointerup",()=>{
+     text.y+=20;
+     text.rotation-=0.1;
+     console.log(text.y)
+    
+    })
+    this.stage.addChild(sprite);
+    this.stage.addChild(text);
+   
+ }
+ 
+  public middle() {
+    const sprite = Sprite.from("https://media.istockphoto.com/id/499695935/photo/blinds.jpg?b=1&s=170667a&w=0&k=20&c=yML_Oc8MAYlaTbgnepj7T5MwVcvcE18yo39rHwI8Jg4=");
+    sprite.anchor.set(0.5);
+    sprite.x = this.screen.width / 2;
+    sprite.y = this.screen.height / 2;
+    sprite.width=innerWidth;
+    sprite.height=innerHeight;
+    this.stage.addChild(sprite);
+    this.nextButton();
+    this.previousBtn()
+    this.textButton();
+  }
+
   public onClicked() {
     this.stage.removeChild();
     this.nextButton();
