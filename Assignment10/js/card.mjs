@@ -10,9 +10,9 @@ import {
   let w = 150;
   let h = 150;
   
-  for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5; j++) {
-      cardFrames.push([i*475, j *465, 475, 465]);
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 6; j++) {
+      cardFrames.push([i*w, j *h, w, h]);
     }
   }
   

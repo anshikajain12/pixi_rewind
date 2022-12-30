@@ -52,7 +52,6 @@ export function start(app) {
 function drawCards(stage) {
   let cardNum = 0;
   const cards = [];
-
   const offsetX = 200;
   const offsetXY = 10;
   const paddingX = 10;
@@ -74,7 +73,6 @@ function drawCards(stage) {
       let card = cards[count];
       card.view.x = c * (WIDTH + paddingX) + offsetX;
       card.view.y = r * (HEIGHT + paddingY) + offsetXY;
-      
       count++;
     }
   }
