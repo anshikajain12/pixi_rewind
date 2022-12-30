@@ -38,7 +38,7 @@ export class Game extends Application {
     nextbtn.anchor.set(0.5);
     nextbtn.x = this.screen.width / 2;
     nextbtn.y = this.screen.height / 2;
-    nextbtn.width= 250;
+    nextbtn.width= 150;
     nextbtn.height=150;
     nextbtn.interactive= true;
     nextbtn.buttonMode=true;
